@@ -2,17 +2,16 @@ import SwiftUI
 
 struct GroundingView: View {
     var body: some View {
-        NavigationView {  // Make sure the NavigationLink is inside a NavigationView
+        NavigationView {
             ZStack {
-                // Background Image
-                Image("IMG2") // Replace with your image asset name
+               
+                Image("IMG2")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .overlay(Color.black.opacity(0.3))
                     .blur(radius: 10)
 
-                // Content
                 VStack {
                     Spacer()
 
@@ -22,7 +21,7 @@ struct GroundingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 8)
-                        .frame(maxWidth: .infinity) // Prevent overflow
+                        .frame(maxWidth: .infinity)
                     
                     VStack(alignment: .center, spacing: 10) {
                         Text("Energize your day with a simple, uplifting exercise routine. This routine will help you clear your mind, boost your mood, and leave you feeling refreshed and mentally sharp.")
@@ -33,12 +32,12 @@ struct GroundingView: View {
                             .padding(.horizontal, 40)
                             .padding(.vertical, 50)
                             .lineLimit(nil)
-                            .fixedSize(horizontal: false, vertical: true) // Ensures text wraps
-                            .frame(maxWidth: .infinity) // Prevent overflow
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: .infinity)
                     }
-                    .padding(.horizontal, 20) // To avoid text touching screen edges
+                    .padding(.horizontal, 20)
 
-                    // Ensure the NavigationLink is tappable
+                    
                     NavigationLink(destination: GroundingPlayView()) {
                         Text("Start")
                             .font(.system(size: 18, weight: .bold))
@@ -47,15 +46,15 @@ struct GroundingView: View {
                             .background(Color.blue)
                             .cornerRadius(25)
                             .padding(.bottom, 40)
-                            .contentShape(Rectangle()) // Make the entire button area tappable
+                            .contentShape(Rectangle())
                     }
-                    .buttonStyle(PlainButtonStyle()) // Remove default button styles that might interfere
+                    .buttonStyle(PlainButtonStyle())
 
                     Spacer()
                 }
-                .padding(.horizontal, 20) // Ensures overall content isn't too close to edges
+                .padding(.horizontal, 20)
             }
-            .navigationBarBackButtonHidden(false) // Ensure the back button shows if you're navigating from here
+            .navigationBarBackButtonHidden(false) 
         }
     }
 }

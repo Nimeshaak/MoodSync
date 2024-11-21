@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  MoodSync
-//
-//  Created by Gihan Nemindra on 11/20/24.
-//
-
 import CoreData
 
 struct PersistenceController {
@@ -21,7 +14,7 @@ struct PersistenceController {
         do {
             try viewContext.save()
         } catch {
-            // Replace this with appropriate error handling.
+           
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -37,7 +30,7 @@ struct PersistenceController {
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this with appropriate error handling.
+                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })

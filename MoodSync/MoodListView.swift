@@ -12,7 +12,7 @@ struct MoodListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Mood History")
+                Text("Mood Log")
                     .font(.title2)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -46,16 +46,15 @@ struct MoodListView: View {
             }
             .padding()
             .background(
-                Color(red: 0.82, green: 0.96, blue: 0.93) // Set custom background color
+                Color(red: 0.82, green: 0.96, blue: 0.93)
             )
-            .cornerRadius(12) // Optional: adds rounded corners
+            .cornerRadius(12)
         }
         .background(
-            Color(red: 0.82, green: 0.96, blue: 0.93) // Background for the whole screen
-                .edgesIgnoringSafeArea(.all) // Ensures the background covers the entire screen
+            Color(red: 0.82, green: 0.96, blue: 0.93)
+                .edgesIgnoringSafeArea(.all)
         )
-        .navigationViewStyle(StackNavigationViewStyle()) // Optional: ensures proper styling on iPad and Mac
-    }
+        .navigationViewStyle(StackNavigationViewStyle())    }
 
     private func deleteMoods(offsets: IndexSet) {
         withAnimation {

@@ -1,5 +1,6 @@
 import SwiftUI
 import UserNotifications
+import Firebase
 
 @main
 struct MoodSyncApp: App {
@@ -15,7 +16,7 @@ struct MoodSyncApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()  // Replace this with your HomeView
+                ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
@@ -63,12 +64,18 @@ struct MoodSyncApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    func application(_ application: UIApplication, didReceive notification: UNNotification) {
-        print("Received notification while app is in the foreground: \(notification.request.content.body)")
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+       
+        UNUserNotificationCenter.current().delegate = self
+
+        
+        FirebaseApp.configure()
+
+        print("Firebase configured successfully.")
+        return true
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
-        return true
+    func application(_ application: UIApplication, didReceive notification: UNNotification) {
+        print("Received notification while app is in the foreground: \(notification.request.content.body)")
     }
 }

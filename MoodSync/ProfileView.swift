@@ -1,51 +1,45 @@
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct ProfileView: View {
+    @State private var username: String? = nil
     @State private var isCrisisModeEnabled: Bool = false
-    @State private var showMapView: Bool = false
-    
+    @State private var isLoading = true
+    @State private var isSignedIn = Auth.auth().currentUser != nil
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                // Profile Image and Actions
                 VStack {
+                   
                     Circle()
                         .fill(Color.white)
                         .frame(width: 80, height: 80)
                         .overlay(
-                            Image(systemName: "plus")
+                            Image(systemName: "person.crop.circle.fill")
+                                .resizable()
                                 .foregroundColor(.gray)
-                                .font(.system(size: 24))
+                                .frame(width: 60, height: 60)
                         )
                     
-                    // NavigationLink for Create Account (Sign Up)
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Create an account")
+                   
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                    } else if let username = username {
+                        Text(username)
                             .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(8)
-                    }
-                    
-                    // Instead of concatenating Text and NavigationLink, wrap them correctly
-                    HStack {
-                        Text("Already Have an account? ")
+                            .foregroundColor(.black)
+                    } else {
+                        Text("No Username Found")
                             .font(.subheadline)
-                            .foregroundColor(.gray)
-                        
-                        NavigationLink(destination: SignInView()) {
-                            Text("Log In")
-                                .font(.subheadline)
-                                .foregroundColor(.blue)
-                                .underline()
-                        }
+                            .foregroundColor(.red)
                     }
                 }
                 .padding(.top, 20)
                 
-                // Crisis Mode Section
+              
                 VStack(alignment: .leading, spacing: 16) {
                     Toggle(isOn: $isCrisisModeEnabled) {
                         Text("Crisis Mode")
@@ -92,20 +86,81 @@ struct ProfileView: View {
                             .padding()
                             .background(RoundedRectangle(cornerRadius: 12).fill(Color(UIColor.systemGray6)))
                         }
-                        .transition(.opacity) // Smooth toggle transition
-                        .animation(.easeInOut, value: isCrisisModeEnabled)
+                        .transition(.opacity)                         .animation(.easeInOut, value: isCrisisModeEnabled)
                     }
                 }
                 .padding()
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(16)
+
+               
+                VStack(spacing: 10) {
+                    if isSignedIn {
+                        Button(action: signOutUser) {
+                            Text("Sign Out")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.red)
+                                .cornerRadius(8)
+                        }
+                    } else {
+                        HStack {
+                            NavigationLink(destination: SignInView()) {
+                                Text("Log In")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                    .underline()
+                            }
+                            
+                            Spacer()
+                            
+                            NavigationLink(destination: SignUpView()) {
+                                Text("Sign Up")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                    .underline()
+                            }
+                        }
+                        .padding()
+                    }
+                }
                 
                 Spacer()
             }
             .padding()
             .background(Color(red: 0.82, green: 0.96, blue: 0.93).edgesIgnoringSafeArea(.all))
+            .onAppear(perform: loadUserProfile)
             .navigationBarTitle("Profile", displayMode: .inline)
-            .navigationBarBackButtonHidden(false)
+        }
+    }
+    
+    private func loadUserProfile() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            self.isLoading = false
+            return
+        }
+        
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).getDocument { snapshot, error in
+            self.isLoading = false
+            if let data = snapshot?.data(), let fetchedUsername = data["username"] as? String {
+                self.username = fetchedUsername
+            } else {
+                print("Failed to fetch user data: \(error?.localizedDescription ?? "No error description")")
+            }
+        }
+    }
+    
+    private func signOutUser() {
+        do {
+            try Auth.auth().signOut()
+            self.isSignedIn = false
+            self.username = nil
+            print("User signed out successfully.")
+        } catch {
+            print("Failed to sign out: \(error.localizedDescription)")
         }
     }
 }

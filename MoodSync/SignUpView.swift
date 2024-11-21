@@ -1,39 +1,35 @@
 import SwiftUI
-//import FirebaseAuth
+import FirebaseAuth
+import FirebaseFirestore
 
 struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var username = ""
+    @State private var errorMessage: String? = nil
     
     var body: some View {
         VStack {
-            // Close button
-            HStack {
-                Spacer()
-                Button(action: {
-                    // Close action here
-                }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.black)
-                        .padding()
-                }
-            }
             
-            Spacer()
-            
-            // Title
             Text("Sign Up")
                 .font(.title)
                 .fontWeight(.semibold)
                 .padding(.bottom, 20)
             
-            // Email, Password & Confirm Password Fields
+            
             VStack(spacing: 16) {
+                TextField("Username", text: $username)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(10)
+                
                 TextField("Email", text: $email)
                     .padding()
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(10)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                 
                 SecureField("Password", text: $password)
                     .padding()
@@ -47,11 +43,15 @@ struct SignUpView: View {
             }
             .padding(.horizontal)
             
-            // Sign Up Button
-            Button(action: {
-                // Sign Up action here
-                signUpUser()
-            }) {
+          
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+            
+            Button(action: signUpUser) {
                 Text("Sign Up")
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -61,88 +61,42 @@ struct SignUpView: View {
             }
             .padding(.horizontal)
             .padding(.top, 20)
-            
-            // Separator with 'or'
-            HStack {
-                Divider()
-                    .frame(height: 1)
-                    .background(Color.gray)
-                Text("or")
-                    .foregroundColor(.gray)
-                Divider()
-                    .frame(height: 1)
-                    .background(Color.gray)
-            }
-            .padding(.vertical, 20)
-            .padding(.horizontal)
-            
-            // Social Sign-Up Buttons
-            VStack(spacing: 10) {
-                SocialSignInButton(iconName: "g.circle", text: "Continue with Google")
-                SocialSignInButton(iconName: "f.circle", text: "Continue with Facebook")
-                SocialSignInButton(iconName: "applelogo", text: "Continue with Apple")
-            }
-            .padding(.horizontal)
-            
-            Spacer()
-            
-            // Sign In option
-            HStack {
-                Text("Already have an account?")
-                    .foregroundColor(.gray)
-                Button(action: {
-                    // Sign In action here
-                }) {
-                    Text("Sign In")
-                        .foregroundColor(.blue)
-                }
-            }
-            .padding(.bottom, 20)
         }
+        .padding()
     }
     
-    // Sign up function
     private func signUpUser() {
-        // Validate inputs (email, password, confirm password)
         guard password == confirmPassword else {
-            print("Passwords do not match")
+            errorMessage = "Passwords do not match."
             return
         }
         
-        // Firebase authentication for sign-up
-       // Auth.auth().createUser(withEmail: email, password: password) { result, error in
-        //    if let error = error {
-           //     print("Error signing up: \(error.localizedDescription)")
-         //   } else {
-           //     print("User signed up successfully")
-                // Proceed to next screen or show success message
-           // }
-       // }
-    }
-}
-
-struct SocialSignInButton: View {
-    var iconName: String
-    var text: String
-    
-    var body: some View {
-        Button(action: {
-            // Social Sign-Up action here
-        }) {
-            HStack {
-                Image(systemName: iconName)
-                    .font(.title2)
-                    .foregroundColor(.black)
-                Text(text)
-                    .foregroundColor(.black)
-                Spacer()
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                errorMessage = error.localizedDescription
+            } else if let userId = result?.user.uid {
+                saveUserToFirestore(userId: userId)
             }
-            .padding()
-            .background(Color(UIColor.systemGray6))
-            .cornerRadius(10)
+        }
+    }
+    
+    private func saveUserToFirestore(userId: String) {
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).setData([
+            "username": username,
+            "email": email
+        ]) { error in
+            if let error = error {
+                errorMessage = "Failed to save user: \(error.localizedDescription)"
+            } else {
+                errorMessage = nil
+                print("User saved successfully")
+            }
         }
     }
 }
+
+
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {

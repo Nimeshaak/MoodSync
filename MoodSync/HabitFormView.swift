@@ -9,20 +9,20 @@ struct HabitFormView: View {
     @State private var reminderTime: Date = Date()
     @State private var reminderNote: String = ""
     
-    // New state variables for navigation
+   
     @State private var isHabitSaved: Bool = false
     @State private var savedHabit: Habit? = nil
     
-    // New state variables for the alert
+    
     @State private var isAlertPresented: Bool = false
     @State private var alertMessage: String = ""
     @State private var alertTitle: String = ""
 
     var body: some View {
         VStack(spacing: 20) {
-            // Add Habit Icon
+           
             Button(action: {
-                // Action for adding an icon
+              
             }) {
                 ZStack {
                     Circle()
@@ -36,21 +36,21 @@ struct HabitFormView: View {
                 }
             }
             
-            // Habit Name Field
+          
             TextField("Add Habit Name Here...", text: $habitName)
                 .padding()
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 5)
             
-            // Habit Description Field
+           
             TextField("Add Habit Description Here...", text: $habitDescription)
                 .padding()
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 5)
             
-            // Repeat On Section
+           
             VStack(alignment: .leading) {
                 Text("Repeat On")
                     .font(.headline)
@@ -70,7 +70,7 @@ struct HabitFormView: View {
                 }
             }
             
-            // Reminder Section
+           
             VStack(alignment: .leading) {
                 Text("Reminder On")
                     .font(.headline)
@@ -79,14 +79,14 @@ struct HabitFormView: View {
                     .labelsHidden()
             }
             
-            // Reminder Note Field
+           
             TextField("Add Note Here...", text: $reminderNote)
                 .padding()
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 5)
             
-            // Save Button
+         
             Button(action: {
                 saveHabit()
             }) {
@@ -106,7 +106,7 @@ struct HabitFormView: View {
         }
     }
     
-    // Function to save the habit to Core Data
+    
     private func saveHabit() {
         let newHabit = Habit(context: viewContext)
         newHabit.name = habitName
@@ -128,7 +128,7 @@ struct HabitFormView: View {
     }
 }
 
-// Formatter for displaying the reminder time
+
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.timeStyle = .short

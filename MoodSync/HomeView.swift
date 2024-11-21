@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             TabView {
-                // Home tab
+              
                 NavigationStack {
                     ScrollView {
                         VStack(spacing: 20) {
@@ -34,8 +34,7 @@ struct HomeView: View {
                                 .padding(.horizontal)
                                 .padding(.top, 10)
                             }
-                            
-                            // Mood Section
+                        
                             if let todayMood = moods.first(where: { isToday($0.timestamp) }) {
                                 VStack(alignment: .leading, spacing: 10) {
                                     HStack {
@@ -73,7 +72,7 @@ struct HomeView: View {
                                 .cornerRadius(0)
                             } else {
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Text("How are You Feeling Today?")
+                                    Text("Hi! How are You Feeling Today?")
                                         .font(.title2)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 0)
@@ -93,12 +92,12 @@ struct HomeView: View {
                                 }
                             }
                             
-                            Text("Motivational Quotes")
+                            Text("Daily Dose of Inspiration")
                                 .font(.title2)
                                 .fontWeight(.medium)
                                 .padding(.top, 0)
                             
-                            // Motivational Quotes Section
+                           
                             VStack(alignment: .center, spacing: 10) {
                                 Text("“The only way to do great work is to love what you do. Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.” – Albert Schweitzer")
                                     .font(.body)
@@ -123,13 +122,13 @@ struct HomeView: View {
                             .padding(.horizontal)
                             .frame(height: 180)
                             
-                            // Your Mood History
-                            Text("Relaxing Activities")
+                            
+                            Text("Find Your Calm")
                                 .font(.title2)
                                 .fontWeight(.medium)
                                 .padding(.top, 10)
                             
-                            // Stack views one below another
+                            
                             VStack(spacing: 20) {
                                 NavigationLink(destination: DeepBreathingView()) {
                                     BoxView(imageName: "IMG1", size: CGSize(width: 320, height: 160), description: "Follow a guided meditation session to center your thoughts, calm your nerves, and enhance mindfulness.")
@@ -163,7 +162,7 @@ struct HomeView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                .background(Color.white.opacity(1.0)) // Apply semi-transparent white background for this tab
+                .background(Color.white.opacity(1.0))
                         .accentColor(.primary)
                         .onAppear {
                             UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(1.0)
@@ -177,7 +176,7 @@ struct HomeView: View {
                         Image(systemName: "chart.bar.fill")
                         Text("Activity")
                     }
-                    .background(Color.white.opacity(1.0)) // Apply background for this tab
+                    .background(Color.white.opacity(1.0))
                     .accentColor(.primary)
                     .onAppear {
                         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(1.0)
@@ -191,7 +190,7 @@ struct HomeView: View {
                         Image(systemName: "plus.circle.fill")
                         Text("Add")
                     }
-                    .background(Color.white.opacity(0.5)) // Apply background for this tab
+                    .background(Color.white.opacity(0.5))
                     .accentColor(.primary)
                     .onAppear {
                         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.5)
@@ -205,7 +204,7 @@ struct HomeView: View {
                         Image(systemName: "list.bullet")
                         Text("Habit")
                     }
-                    .background(Color.white.opacity(1.0)) // Apply background for this tab
+                    .background(Color.white.opacity(1.0))
                     .accentColor(.primary)
                     .onAppear {
                         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(1.0)
@@ -219,7 +218,7 @@ struct HomeView: View {
                         Image(systemName: "person.crop.circle.fill")
                         Text("Profile")
                     }
-                    .background(Color.white.opacity(1.0)) // Apply background for this tab
+                    .background(Color.white.opacity(1.0)) 
                     .accentColor(.primary)
                     .onAppear {
                         UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(1.0)

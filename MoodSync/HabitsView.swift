@@ -41,7 +41,7 @@ struct HabitsView: View {
         }
     }
 
-    /// Function to delete a habit from Core Data
+   
     private func deleteHabit(habit: Habit) {
         viewContext.delete(habit)
         do {
@@ -54,7 +54,7 @@ struct HabitsView: View {
 
 struct HabitCardView: View {
     let habit: Habit
-    let onDelete: () -> Void // Callback for deleting the habit
+    let onDelete: () -> Void
 
     var body: some View {
         HStack {
@@ -95,7 +95,7 @@ struct HabitCardView: View {
     }
 }
 
-// Formatter for displaying the reminder time
+
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.timeStyle = .short

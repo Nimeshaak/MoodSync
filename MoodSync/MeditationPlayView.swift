@@ -2,30 +2,30 @@ import SwiftUI
 import AVFoundation
 
 struct MeditationPlayView: View {
-    @Environment(\.presentationMode) var presentationMode // For dismissing the screen
-    @State private var timerValue: Int = 60// Timer duration in seconds
+    @Environment(\.presentationMode) var presentationMode
+    @State private var timerValue: Int = 60
     @State private var timeRemaining: Int = 60
     @State private var isTimerRunning = false
-    @State private var breathingInstruction: String = "Breathe In" // Default first instruction
-    @State private var breathCycle: Int = 0 // Keeps track of the breath cycle
-    @State private var isFading = false // Controls fading animation
-    @State private var showCompletionText = false // Tracks if the completion text should be shown
+    @State private var breathingInstruction: String = "Breathe In"
+    @State private var isFading = false
+    @State private var showCompletionText = false
     @State private var audioPlayer: AVAudioPlayer?
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let fadeDuration: Double = 1.0
+    private let displayDuration: Double = 6.0
 
     var body: some View {
-        NavigationStack {  // Use NavigationStack for iOS 16+
+        NavigationStack {
             ZStack {
-                // Background image
-                Image("IMG2") // Replace with your image asset name
+                
+                Image("IMG2")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
 
-                // Overlay content
+                
                 VStack {
-                    // Title and description - only visible before the timer ends
                     if !showCompletionText {
+                      
                         VStack(alignment: .center, spacing: 8) {
                             Text("Relax and Breathe")
                                 .font(.title)
@@ -41,31 +41,30 @@ struct MeditationPlayView: View {
 
                         Spacer()
 
-                        // Breathing Instructions with fading effect - only visible before the timer ends
+                      
                         VStack {
                             Text(breathingInstruction)
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .opacity(isFading ? 0 : 1)
-                                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isFading)
-                                .onAppear {
-                                    isFading.toggle()
-                                }
+                                .animation(.easeInOut(duration: fadeDuration), value: isFading)
+                        }
+                        .onAppear {
+                            startBreathingCycle()
                         }
 
                         Spacer()
 
-                        // Countdown timer - only visible before the timer ends
+                        
                         Text(formatTime(timeRemaining))
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding(.bottom, 40)
-                            .onReceive(timer) { _ in
+                            .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
                                 if timeRemaining > 0 {
                                     timeRemaining -= 1
-                                    updateBreathingCycle()
                                 } else {
                                     stopMusic()
                                     showCompletionText = true
@@ -73,35 +72,35 @@ struct MeditationPlayView: View {
                             }
                     }
 
-                    // Show the completion text and button after the timer is complete
+                   
                     if showCompletionText {
                         VStack {
                             Text("You have completed your meditation!")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                                 .padding(.bottom, 20)
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity, alignment: .center)
 
-                            // Return to HomeButton with NavigationLink
+                           
                             NavigationLink(destination: HomeView()) {
-                                Text("Return to Home")
+                                Text("Continue")
                                     .fontWeight(.bold)
                                     .padding()
-                                    .background(Color.green.opacity(0.3)) // Sage green color, transparent
-                                    .foregroundColor(.green) // Green text
+                                    .background(Color.black.opacity(0.3))
+                                    .foregroundColor(.white)
                                     .cornerRadius(12)
-                                    .frame(width: 200) // Button width
+                                    .frame(width: 200)
                             }
                             .padding(.top, 20)
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensures the VStack takes up full space
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
                 .padding()
 
-                // Close button (if needed, to dismiss the screen early)
+                
                 VStack {
                     HStack {
                         Spacer()
@@ -120,38 +119,47 @@ struct MeditationPlayView: View {
                 }
             }
             .onAppear {
-                startMeditation() // Start meditation as soon as the view appears
+                startMeditation()
             }
         }
     }
 
-    // Format Time
+  
     private func formatTime(_ totalSeconds: Int) -> String {
         let minutes = totalSeconds / 60
         let seconds = totalSeconds % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
-    // Start Meditation
+    
     private func startMeditation() {
         isTimerRunning = true
         setupAudioPlayer()
         playMusic()
     }
 
-    // Update Breathing Instructions
-    private func updateBreathingCycle() {
-        if breathCycle == 0 {
-            breathingInstruction = "Breathe In"
-        } else if breathCycle == 1 {
-            breathingInstruction = "Breathe Out"
+   
+    private func startBreathingCycle() {
+        Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: true) { timer in
+            if timeRemaining <= 0 {
+                timer.invalidate()
+                return
+            }
+            toggleBreathingInstruction()
         }
-
-        // Cycle breathing instructions
-        breathCycle = (breathCycle + 1) % 2
     }
 
-    // Setup Audio Player
+  
+    private func toggleBreathingInstruction() {
+        isFading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + fadeDuration) {
+          
+            breathingInstruction = (breathingInstruction == "Breathe In") ? "Breathe Out" : "Breathe In"
+            isFading = false
+        }
+    }
+
+   
     private func setupAudioPlayer() {
         guard let path = Bundle.main.path(forResource: "Thoughtful", ofType: "mp3") else {
             print("Error: Audio file not found")
@@ -161,23 +169,22 @@ struct MeditationPlayView: View {
 
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.numberOfLoops = -1 // Loop indefinitely
+            audioPlayer?.numberOfLoops = -1
         } catch {
             print("Error loading audio file: \(error.localizedDescription)")
         }
     }
 
-    // Play Music
+  
     private func playMusic() {
         audioPlayer?.play()
     }
 
-    // Stop Music
+   
     private func stopMusic() {
         audioPlayer?.stop()
     }
 }
-
 struct MeditationPlayView_Previews: PreviewProvider {
     static var previews: some View {
         MeditationPlayView()

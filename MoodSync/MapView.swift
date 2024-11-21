@@ -10,7 +10,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     override init() {
         self.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default to San Francisco
+            center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
             span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         )
         super.init()
@@ -36,7 +36,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 struct MapView: View {
     @ObservedObject var locationManager: LocationManager
     @State private var hospitals: [MKMapItem] = []
-    @State private var userTrackingMode: MapUserTrackingMode = .follow // This is the state variable
+    @State private var userTrackingMode: MapUserTrackingMode = .follow
     
     var body: some View {
         VStack {
@@ -72,7 +72,7 @@ struct MapView: View {
             
             if let response = response {
                 self.hospitals = response.mapItems
-                // Add annotations to the map (optional)
+                
             }
         }
     }

@@ -9,13 +9,13 @@ struct ContentView: View {
             GetStartedOne()
         } else {
             VStack {
-                Image("Logo") // Add your image named "Logo" from the assets
-                    .resizable()  // Make the image resizable
-                    .scaledToFit() // Scale the image to fit within the available space
-                    .frame(maxWidth: .infinity, maxHeight: .infinity) // Make the image fill the screen
+                Image("Logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .background(Color(red: 0.82, green: 0.96, blue: 0.93)) // Background color
-            .edgesIgnoringSafeArea(.all) // Extend the background to the edges
+            .background(Color(red: 0.82, green: 0.96, blue: 0.93))
+            .edgesIgnoringSafeArea(.all) 
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation(.easeOut(duration: 0.5)) {

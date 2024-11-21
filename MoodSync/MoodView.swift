@@ -5,6 +5,7 @@ struct MoodView: View {
     @State private var selectedMood: String? = nil
     @State private var note: String = ""
     @State private var currentDate = Date()
+    @State private var showAlert = false 
     @Environment(\.managedObjectContext) private var viewContext
 
     let moods = [
@@ -16,7 +17,6 @@ struct MoodView: View {
     ]
 
     init() {
-        // Fetch existing mood for the current day
         let calendar = Calendar.current
         let fetchRequest: NSFetchRequest<Mood> = Mood.fetchRequest()
         fetchRequest.predicate = NSPredicate(
@@ -28,7 +28,7 @@ struct MoodView: View {
         do {
             let existingMoods = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
             if let existingMood = existingMoods.first {
-                _selectedMood = State(initialValue: existingMood.selectedEmoji) // Store emoji directly
+                _selectedMood = State(initialValue: existingMood.selectedEmoji)
                 _note = State(initialValue: existingMood.note ?? "")
             }
         } catch {
@@ -37,20 +37,16 @@ struct MoodView: View {
     }
 
     var body: some View {
-        
         VStack(spacing: 20) {
-            // Title
             Text("How are you feeling today?")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top, 40)
 
-            // Date
             Text(dateFormatted())
                 .foregroundColor(.gray)
                 .font(.subheadline)
 
-            // Mood selection
             HStack(spacing: 15) {
                 ForEach(moods, id: \.1) { mood in
                     VStack {
@@ -63,7 +59,7 @@ struct MoodView: View {
                                     .frame(width: 60, height: 60)
                             )
                             .onTapGesture {
-                                selectedMood = mood.1 // Save emoji directly
+                                selectedMood = mood.1
                             }
 
                         Text(mood.0)
@@ -73,7 +69,6 @@ struct MoodView: View {
                 }
             }
 
-            // Add note
             VStack(alignment: .leading, spacing: 5) {
                 Text("Add a little Note")
                     .font(.headline)
@@ -82,11 +77,10 @@ struct MoodView: View {
                     .padding()
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
-                    .foregroundColor(.black)  // Ensures the text is visible
+                    .foregroundColor(.black)
             }
             .padding(.horizontal)
 
-            // Save button
             Button(action: saveMood) {
                 Text("Save")
                     .font(.headline)
@@ -100,17 +94,22 @@ struct MoodView: View {
 
             Spacer()
         }
-        
         .background(
             ZStack {
-                Image("FirstImage") // Replace with your image name from assets
+                Image("FirstImage")
                     .resizable()
                     .scaledToFill()
-                    .ignoresSafeArea() // Ensures the image fills the entire screen
+                    .ignoresSafeArea()
                     .blur(radius: 10)
             }
         )
-
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Success"),
+                message: Text("Your mood is successfully updated!"),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 
     private func saveMood() {
@@ -119,7 +118,6 @@ struct MoodView: View {
             return
         }
 
-        // Check if a mood already exists for the current day
         let calendar = Calendar.current
         let startOfToday = calendar.startOfDay(for: Date())
         let endOfToday = calendar.date(byAdding: .day, value: 1, to: startOfToday)!
@@ -135,21 +133,20 @@ struct MoodView: View {
             let existingMoods = try viewContext.fetch(fetchRequest)
 
             if let existingMood = existingMoods.first {
-                // Update existing mood
                 existingMood.selectedEmoji = mood
                 existingMood.note = note
-                existingMood.timestamp = Date() // Update timestamp to current date
-                existingMood.lastUpdated = Date() // Optionally update last updated timestamp
+                existingMood.timestamp = Date()
+                existingMood.lastUpdated = Date()
             } else {
-                // Create a new mood
                 let newMood = Mood(context: viewContext)
                 newMood.selectedEmoji = mood
                 newMood.note = note
-                newMood.timestamp = Date()  // Set timestamp when creating new mood
-                newMood.lastUpdated = Date() // Set last updated
+                newMood.timestamp = Date()
+                newMood.lastUpdated = Date()
             }
 
             try viewContext.save()
+            showAlert = true // Trigger the alert
         } catch {
             print("Failed to save mood: \(error)")
         }
