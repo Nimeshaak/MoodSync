@@ -62,6 +62,5 @@ struct GroundingView: View {
 struct GroundingView_Previews: PreviewProvider {
     static var previews: some View {
         GroundingView()
-            .previewDevice("iPhone 14 Pro")
     }
 }
