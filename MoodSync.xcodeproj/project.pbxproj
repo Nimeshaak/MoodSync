@@ -35,7 +35,6 @@
 		42646E172CF050DA0022D596 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0F2CF050DA0022D596 /* SignUpView.swift */; };
 		42646E182CF050DA0022D596 /* MoodSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E102CF050DA0022D596 /* MoodSyncApp.swift */; };
 		42646E192CF050DA0022D596 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E112CF050DA0022D596 /* ProfileView.swift */; };
-		42646E1F2CF055000022D596 /* Naturally.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42646E1E2CF055000022D596 /* Naturally.mp3 */; };
 		42646E212CF055C50022D596 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42646E202CF055C50022D596 /* GoogleService-Info.plist */; };
 		42646E242CF056F80022D596 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E232CF056F80022D596 /* FirebaseAnalytics */; };
 		42646E262CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E252CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -61,6 +60,9 @@
 		42646E4E2CF056F80022D596 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E4D2CF056F80022D596 /* FirebaseStorage */; };
 		42646E502CF056F80022D596 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E4F2CF056F80022D596 /* FirebaseStorageCombine-Community */; };
 		42646E522CF056F80022D596 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E512CF056F80022D596 /* FirebaseVertexAI */; };
+		42646E582CF08DF60022D596 /* Audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42646E572CF08DF60022D596 /* Audio2.mp3 */; };
+		42646E5A2CF08DFA0022D596 /* Audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42646E592CF08DFA0022D596 /* Audio3.mp3 */; };
+		42646E5C2CF08DFF0022D596 /* Audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42646E5B2CF08DFF0022D596 /* Audio1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +114,10 @@
 		42646E0F2CF050DA0022D596 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/SignUpView.swift"; sourceTree = "<group>"; };
 		42646E102CF050DA0022D596 /* MoodSyncApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodSyncApp.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MoodSyncApp.swift"; sourceTree = "<group>"; };
 		42646E112CF050DA0022D596 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/ProfileView.swift"; sourceTree = "<group>"; };
-		42646E1E2CF055000022D596 /* Naturally.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Naturally.mp3; sourceTree = "<group>"; };
 		42646E202CF055C50022D596 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42646E572CF08DF60022D596 /* Audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Audio2.mp3; sourceTree = "<group>"; };
+		42646E592CF08DFA0022D596 /* Audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Audio3.mp3; sourceTree = "<group>"; };
+		42646E5B2CF08DFF0022D596 /* Audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Audio1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,13 +200,15 @@
 				42646DED2CF04F3B0022D596 /* HomeView.swift */,
 				42646E0B2CF050DA0022D596 /* MoodView.swift */,
 				42646DEF2CF04F3B0022D596 /* MoodListView.swift */,
-				42646E1E2CF055000022D596 /* Naturally.mp3 */,
 				42646DFD2CF04FAD0022D596 /* MoodSync.xcdatamodeld */,
 				42646DBC2CF04E980022D596 /* Assets.xcassets */,
 				42646DBE2CF04E980022D596 /* Preview Content */,
 				42646DEC2CF04F3B0022D596 /* GroundingView.swift */,
 				42646DEE2CF04F3B0022D596 /* MeditationView.swift */,
 				42646E0E2CF050DA0022D596 /* RelaxingView.swift */,
+				42646E5B2CF08DFF0022D596 /* Audio1.mp3 */,
+				42646E572CF08DF60022D596 /* Audio2.mp3 */,
+				42646E592CF08DFA0022D596 /* Audio3.mp3 */,
 				42646E0A2CF050DA0022D596 /* RelaxingPlayView.swift */,
 				42646DF22CF04F3B0022D596 /* MeditationPlayView.swift */,
 				42646DF32CF04F3B0022D596 /* GroundingPlayView.swift */,
@@ -377,10 +383,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42646E582CF08DF60022D596 /* Audio2.mp3 in Resources */,
+				42646E5A2CF08DFA0022D596 /* Audio3.mp3 in Resources */,
 				42646DC02CF04E980022D596 /* Preview Assets.xcassets in Resources */,
+				42646E5C2CF08DFF0022D596 /* Audio1.mp3 in Resources */,
 				42646E212CF055C50022D596 /* GoogleService-Info.plist in Resources */,
 				42646DBD2CF04E980022D596 /* Assets.xcassets in Resources */,
-				42646E1F2CF055000022D596 /* Naturally.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

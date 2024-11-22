@@ -1,10 +1,3 @@
-//
-//  MoodSyncUITests.swift
-//  MoodSyncUITests
-//
-//  Created by COBSCCOMPY4231P-028 on 2024-11-22.
-//
-
 import XCTest
 
 final class MoodSyncUITests: XCTestCase {
