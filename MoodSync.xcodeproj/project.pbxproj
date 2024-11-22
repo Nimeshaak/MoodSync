@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42646DBB2CF04E970022D596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DBA2CF04E970022D596 /* ContentView.swift */; };
+		42646DBD2CF04E980022D596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42646DBC2CF04E980022D596 /* Assets.xcassets */; };
+		42646DC02CF04E980022D596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42646DBF2CF04E980022D596 /* Preview Assets.xcassets */; };
+		42646DC22CF04E980022D596 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DC12CF04E980022D596 /* Persistence.swift */; };
+		42646DCF2CF04E980022D596 /* MoodSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DCE2CF04E980022D596 /* MoodSyncTests.swift */; };
+		42646DD92CF04E980022D596 /* MoodSyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DD82CF04E980022D596 /* MoodSyncUITests.swift */; };
+		42646DDB2CF04E980022D596 /* MoodSyncUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DDA2CF04E980022D596 /* MoodSyncUITestsLaunchTests.swift */; };
+		42646DE82CF04EC50022D596 /* GetStartedOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DE72CF04EC50022D596 /* GetStartedOne.swift */; };
+		42646DEA2CF04EED0022D596 /* GetStartedTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DE92CF04EED0022D596 /* GetStartedTwo.swift */; };
+		42646DF42CF04F3B0022D596 /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DEB2CF04F3B0022D596 /* HabitFormView.swift */; };
+		42646DF52CF04F3B0022D596 /* GroundingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DEC2CF04F3B0022D596 /* GroundingView.swift */; };
+		42646DF62CF04F3B0022D596 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DED2CF04F3B0022D596 /* HomeView.swift */; };
+		42646DF72CF04F3B0022D596 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DEE2CF04F3B0022D596 /* MeditationView.swift */; };
+		42646DF82CF04F3B0022D596 /* MoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DEF2CF04F3B0022D596 /* MoodListView.swift */; };
+		42646DF92CF04F3B0022D596 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DF02CF04F3B0022D596 /* HabitsView.swift */; };
+		42646DFA2CF04F3B0022D596 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DF12CF04F3B0022D596 /* MapView.swift */; };
+		42646DFB2CF04F3B0022D596 /* MeditationPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DF22CF04F3B0022D596 /* MeditationPlayView.swift */; };
+		42646DFC2CF04F3B0022D596 /* GroundingPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646DF32CF04F3B0022D596 /* GroundingPlayView.swift */; };
+		42646DFF2CF04FAD0022D596 /* MoodSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42646DFD2CF04FAD0022D596 /* MoodSync.xcdatamodeld */; };
+		42646E092CF050560022D596 /* GetStartedThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E082CF050560022D596 /* GetStartedThree.swift */; };
+		42646E122CF050DA0022D596 /* RelaxingPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0A2CF050DA0022D596 /* RelaxingPlayView.swift */; };
+		42646E132CF050DA0022D596 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0B2CF050DA0022D596 /* MoodView.swift */; };
+		42646E142CF050DA0022D596 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0C2CF050DA0022D596 /* NotificationView.swift */; };
+		42646E152CF050DA0022D596 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0D2CF050DA0022D596 /* SignInView.swift */; };
+		42646E162CF050DA0022D596 /* RelaxingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0E2CF050DA0022D596 /* RelaxingView.swift */; };
+		42646E172CF050DA0022D596 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E0F2CF050DA0022D596 /* SignUpView.swift */; };
+		42646E182CF050DA0022D596 /* MoodSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E102CF050DA0022D596 /* MoodSyncApp.swift */; };
+		42646E192CF050DA0022D596 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E112CF050DA0022D596 /* ProfileView.swift */; };
+		42646E1F2CF055000022D596 /* Naturally.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42646E1E2CF055000022D596 /* Naturally.mp3 */; };
+		42646E212CF055C50022D596 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42646E202CF055C50022D596 /* GoogleService-Info.plist */; };
+		42646E242CF056F80022D596 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E232CF056F80022D596 /* FirebaseAnalytics */; };
+		42646E262CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E252CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion */; };
+		42646E282CF056F80022D596 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E272CF056F80022D596 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		42646E2A2CF056F80022D596 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E292CF056F80022D596 /* FirebaseAppCheck */; };
+		42646E2C2CF056F80022D596 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E2B2CF056F80022D596 /* FirebaseAppDistribution-Beta */; };
+		42646E2E2CF056F80022D596 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E2D2CF056F80022D596 /* FirebaseAuth */; };
+		42646E302CF056F80022D596 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E2F2CF056F80022D596 /* FirebaseAuthCombine-Community */; };
+		42646E322CF056F80022D596 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E312CF056F80022D596 /* FirebaseCore */; };
+		42646E342CF056F80022D596 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E332CF056F80022D596 /* FirebaseCrashlytics */; };
+		42646E362CF056F80022D596 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E352CF056F80022D596 /* FirebaseDatabase */; };
+		42646E382CF056F80022D596 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E372CF056F80022D596 /* FirebaseDynamicLinks */; };
+		42646E3A2CF056F80022D596 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E392CF056F80022D596 /* FirebaseFirestore */; };
+		42646E3C2CF056F80022D596 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E3B2CF056F80022D596 /* FirebaseFirestoreCombine-Community */; };
+		42646E3E2CF056F80022D596 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E3D2CF056F80022D596 /* FirebaseFunctions */; };
+		42646E402CF056F80022D596 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E3F2CF056F80022D596 /* FirebaseFunctionsCombine-Community */; };
+		42646E422CF056F80022D596 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E412CF056F80022D596 /* FirebaseInAppMessaging-Beta */; };
+		42646E442CF056F80022D596 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E432CF056F80022D596 /* FirebaseInstallations */; };
+		42646E462CF056F80022D596 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E452CF056F80022D596 /* FirebaseMLModelDownloader */; };
+		42646E482CF056F80022D596 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E472CF056F80022D596 /* FirebaseMessaging */; };
+		42646E4A2CF056F80022D596 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E492CF056F80022D596 /* FirebasePerformance */; };
+		42646E4C2CF056F80022D596 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E4B2CF056F80022D596 /* FirebaseRemoteConfig */; };
+		42646E4E2CF056F80022D596 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E4D2CF056F80022D596 /* FirebaseStorage */; };
+		42646E502CF056F80022D596 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E4F2CF056F80022D596 /* FirebaseStorageCombine-Community */; };
+		42646E522CF056F80022D596 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 42646E512CF056F80022D596 /* FirebaseVertexAI */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42646DCB2CF04E980022D596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42646DAD2CF04E970022D596 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42646DB42CF04E970022D596;
+			remoteInfo = MoodSync;
+		};
+		42646DD52CF04E980022D596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42646DAD2CF04E970022D596 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42646DB42CF04E970022D596;
+			remoteInfo = MoodSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42646DB52CF04E970022D596 /* MoodSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42646DBA2CF04E970022D596 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42646DBC2CF04E980022D596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42646DBF2CF04E980022D596 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42646DC12CF04E980022D596 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		42646DCA2CF04E980022D596 /* MoodSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42646DCE2CF04E980022D596 /* MoodSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncTests.swift; sourceTree = "<group>"; };
+		42646DD42CF04E980022D596 /* MoodSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42646DD82CF04E980022D596 /* MoodSyncUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncUITests.swift; sourceTree = "<group>"; };
+		42646DDA2CF04E980022D596 /* MoodSyncUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		42646DE72CF04EC50022D596 /* GetStartedOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetStartedOne.swift; path = "../../../Downloads/MoodSync-final/MoodSync/GetStartedOne.swift"; sourceTree = "<group>"; };
+		42646DE92CF04EED0022D596 /* GetStartedTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetStartedTwo.swift; path = "../../../Downloads/MoodSync-final/MoodSync/GetStartedTwo.swift"; sourceTree = "<group>"; };
+		42646DEB2CF04F3B0022D596 /* HabitFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitFormView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/HabitFormView.swift"; sourceTree = "<group>"; };
+		42646DEC2CF04F3B0022D596 /* GroundingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroundingView.swift; sourceTree = "<group>"; };
+		42646DED2CF04F3B0022D596 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/HomeView.swift"; sourceTree = "<group>"; };
+		42646DEE2CF04F3B0022D596 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MeditationView.swift"; sourceTree = "<group>"; };
+		42646DEF2CF04F3B0022D596 /* MoodListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodListView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MoodListView.swift"; sourceTree = "<group>"; };
+		42646DF02CF04F3B0022D596 /* HabitsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitsView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/HabitsView.swift"; sourceTree = "<group>"; };
+		42646DF12CF04F3B0022D596 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MapView.swift"; sourceTree = "<group>"; };
+		42646DF22CF04F3B0022D596 /* MeditationPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationPlayView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MeditationPlayView.swift"; sourceTree = "<group>"; };
+		42646DF32CF04F3B0022D596 /* GroundingPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroundingPlayView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/GroundingPlayView.swift"; sourceTree = "<group>"; };
+		42646DFE2CF04FAD0022D596 /* MoodSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSync.xcdatamodel; sourceTree = "<group>"; };
+		42646E082CF050560022D596 /* GetStartedThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetStartedThree.swift; path = "../../../Downloads/MoodSync-final/MoodSync/GetStartedThree.swift"; sourceTree = "<group>"; };
+		42646E0A2CF050DA0022D596 /* RelaxingPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelaxingPlayView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/RelaxingPlayView.swift"; sourceTree = "<group>"; };
+		42646E0B2CF050DA0022D596 /* MoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MoodView.swift"; sourceTree = "<group>"; };
+		42646E0C2CF050DA0022D596 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/NotificationView.swift"; sourceTree = "<group>"; };
+		42646E0D2CF050DA0022D596 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/SignInView.swift"; sourceTree = "<group>"; };
+		42646E0E2CF050DA0022D596 /* RelaxingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelaxingView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/RelaxingView.swift"; sourceTree = "<group>"; };
+		42646E0F2CF050DA0022D596 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/SignUpView.swift"; sourceTree = "<group>"; };
+		42646E102CF050DA0022D596 /* MoodSyncApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodSyncApp.swift; path = "../../../Downloads/MoodSync-final/MoodSync/MoodSyncApp.swift"; sourceTree = "<group>"; };
+		42646E112CF050DA0022D596 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "../../../Downloads/MoodSync-final/MoodSync/ProfileView.swift"; sourceTree = "<group>"; };
+		42646E1E2CF055000022D596 /* Naturally.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Naturally.mp3; sourceTree = "<group>"; };
+		42646E202CF055C50022D596 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42646DB22CF04E970022D596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42646E3C2CF056F80022D596 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				42646E522CF056F80022D596 /* FirebaseVertexAI in Frameworks */,
+				42646E3E2CF056F80022D596 /* FirebaseFunctions in Frameworks */,
+				42646E4A2CF056F80022D596 /* FirebasePerformance in Frameworks */,
+				42646E502CF056F80022D596 /* FirebaseStorageCombine-Community in Frameworks */,
+				42646E4C2CF056F80022D596 /* FirebaseRemoteConfig in Frameworks */,
+				42646E362CF056F80022D596 /* FirebaseDatabase in Frameworks */,
+				42646E382CF056F80022D596 /* FirebaseDynamicLinks in Frameworks */,
+				42646E2A2CF056F80022D596 /* FirebaseAppCheck in Frameworks */,
+				42646E2E2CF056F80022D596 /* FirebaseAuth in Frameworks */,
+				42646E242CF056F80022D596 /* FirebaseAnalytics in Frameworks */,
+				42646E3A2CF056F80022D596 /* FirebaseFirestore in Frameworks */,
+				42646E482CF056F80022D596 /* FirebaseMessaging in Frameworks */,
+				42646E442CF056F80022D596 /* FirebaseInstallations in Frameworks */,
+				42646E402CF056F80022D596 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				42646E2C2CF056F80022D596 /* FirebaseAppDistribution-Beta in Frameworks */,
+				42646E282CF056F80022D596 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				42646E422CF056F80022D596 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				42646E302CF056F80022D596 /* FirebaseAuthCombine-Community in Frameworks */,
+				42646E342CF056F80022D596 /* FirebaseCrashlytics in Frameworks */,
+				42646E462CF056F80022D596 /* FirebaseMLModelDownloader in Frameworks */,
+				42646E4E2CF056F80022D596 /* FirebaseStorage in Frameworks */,
+				42646E322CF056F80022D596 /* FirebaseCore in Frameworks */,
+				42646E262CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DC72CF04E980022D596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DD12CF04E980022D596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42646DAC2CF04E970022D596 = {
+			isa = PBXGroup;
+			children = (
+				42646DB72CF04E970022D596 /* MoodSync */,
+				42646DCD2CF04E980022D596 /* MoodSyncTests */,
+				42646DD72CF04E980022D596 /* MoodSyncUITests */,
+				42646DB62CF04E970022D596 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42646DB62CF04E970022D596 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42646DB52CF04E970022D596 /* MoodSync.app */,
+				42646DCA2CF04E980022D596 /* MoodSyncTests.xctest */,
+				42646DD42CF04E980022D596 /* MoodSyncUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42646DB72CF04E970022D596 /* MoodSync */ = {
+			isa = PBXGroup;
+			children = (
+				42646E102CF050DA0022D596 /* MoodSyncApp.swift */,
+				42646DBA2CF04E970022D596 /* ContentView.swift */,
+				42646DE72CF04EC50022D596 /* GetStartedOne.swift */,
+				42646DE92CF04EED0022D596 /* GetStartedTwo.swift */,
+				42646E082CF050560022D596 /* GetStartedThree.swift */,
+				42646DED2CF04F3B0022D596 /* HomeView.swift */,
+				42646E0B2CF050DA0022D596 /* MoodView.swift */,
+				42646DEF2CF04F3B0022D596 /* MoodListView.swift */,
+				42646E1E2CF055000022D596 /* Naturally.mp3 */,
+				42646DFD2CF04FAD0022D596 /* MoodSync.xcdatamodeld */,
+				42646DBC2CF04E980022D596 /* Assets.xcassets */,
+				42646DBE2CF04E980022D596 /* Preview Content */,
+				42646DEC2CF04F3B0022D596 /* GroundingView.swift */,
+				42646DEE2CF04F3B0022D596 /* MeditationView.swift */,
+				42646E0E2CF050DA0022D596 /* RelaxingView.swift */,
+				42646E0A2CF050DA0022D596 /* RelaxingPlayView.swift */,
+				42646DF22CF04F3B0022D596 /* MeditationPlayView.swift */,
+				42646DF32CF04F3B0022D596 /* GroundingPlayView.swift */,
+				42646E202CF055C50022D596 /* GoogleService-Info.plist */,
+				42646DC12CF04E980022D596 /* Persistence.swift */,
+				42646DF02CF04F3B0022D596 /* HabitsView.swift */,
+				42646E0C2CF050DA0022D596 /* NotificationView.swift */,
+				42646DEB2CF04F3B0022D596 /* HabitFormView.swift */,
+				42646E112CF050DA0022D596 /* ProfileView.swift */,
+				42646DF12CF04F3B0022D596 /* MapView.swift */,
+				42646E0F2CF050DA0022D596 /* SignUpView.swift */,
+				42646E0D2CF050DA0022D596 /* SignInView.swift */,
+			);
+			path = MoodSync;
+			sourceTree = "<group>";
+		};
+		42646DBE2CF04E980022D596 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				42646DBF2CF04E980022D596 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42646DCD2CF04E980022D596 /* MoodSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				42646DCE2CF04E980022D596 /* MoodSyncTests.swift */,
+			);
+			path = MoodSyncTests;
+			sourceTree = "<group>";
+		};
+		42646DD72CF04E980022D596 /* MoodSyncUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42646DD82CF04E980022D596 /* MoodSyncUITests.swift */,
+				42646DDA2CF04E980022D596 /* MoodSyncUITestsLaunchTests.swift */,
+			);
+			path = MoodSyncUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42646DB42CF04E970022D596 /* MoodSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42646DDE2CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSync" */;
+			buildPhases = (
+				42646DB12CF04E970022D596 /* Sources */,
+				42646DB22CF04E970022D596 /* Frameworks */,
+				42646DB32CF04E970022D596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodSync;
+			packageProductDependencies = (
+				42646E232CF056F80022D596 /* FirebaseAnalytics */,
+				42646E252CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion */,
+				42646E272CF056F80022D596 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				42646E292CF056F80022D596 /* FirebaseAppCheck */,
+				42646E2B2CF056F80022D596 /* FirebaseAppDistribution-Beta */,
+				42646E2D2CF056F80022D596 /* FirebaseAuth */,
+				42646E2F2CF056F80022D596 /* FirebaseAuthCombine-Community */,
+				42646E312CF056F80022D596 /* FirebaseCore */,
+				42646E332CF056F80022D596 /* FirebaseCrashlytics */,
+				42646E352CF056F80022D596 /* FirebaseDatabase */,
+				42646E372CF056F80022D596 /* FirebaseDynamicLinks */,
+				42646E392CF056F80022D596 /* FirebaseFirestore */,
+				42646E3B2CF056F80022D596 /* FirebaseFirestoreCombine-Community */,
+				42646E3D2CF056F80022D596 /* FirebaseFunctions */,
+				42646E3F2CF056F80022D596 /* FirebaseFunctionsCombine-Community */,
+				42646E412CF056F80022D596 /* FirebaseInAppMessaging-Beta */,
+				42646E432CF056F80022D596 /* FirebaseInstallations */,
+				42646E452CF056F80022D596 /* FirebaseMLModelDownloader */,
+				42646E472CF056F80022D596 /* FirebaseMessaging */,
+				42646E492CF056F80022D596 /* FirebasePerformance */,
+				42646E4B2CF056F80022D596 /* FirebaseRemoteConfig */,
+				42646E4D2CF056F80022D596 /* FirebaseStorage */,
+				42646E4F2CF056F80022D596 /* FirebaseStorageCombine-Community */,
+				42646E512CF056F80022D596 /* FirebaseVertexAI */,
+			);
+			productName = MoodSync;
+			productReference = 42646DB52CF04E970022D596 /* MoodSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42646DC92CF04E980022D596 /* MoodSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42646DE12CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSyncTests" */;
+			buildPhases = (
+				42646DC62CF04E980022D596 /* Sources */,
+				42646DC72CF04E980022D596 /* Frameworks */,
+				42646DC82CF04E980022D596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42646DCC2CF04E980022D596 /* PBXTargetDependency */,
+			);
+			name = MoodSyncTests;
+			productName = MoodSyncTests;
+			productReference = 42646DCA2CF04E980022D596 /* MoodSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42646DD32CF04E980022D596 /* MoodSyncUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42646DE42CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSyncUITests" */;
+			buildPhases = (
+				42646DD02CF04E980022D596 /* Sources */,
+				42646DD12CF04E980022D596 /* Frameworks */,
+				42646DD22CF04E980022D596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42646DD62CF04E980022D596 /* PBXTargetDependency */,
+			);
+			name = MoodSyncUITests;
+			productName = MoodSyncUITests;
+			productReference = 42646DD42CF04E980022D596 /* MoodSyncUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42646DAD2CF04E970022D596 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					42646DB42CF04E970022D596 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					42646DC92CF04E980022D596 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 42646DB42CF04E970022D596;
+					};
+					42646DD32CF04E980022D596 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 42646DB42CF04E970022D596;
+					};
+				};
+			};
+			buildConfigurationList = 42646DB02CF04E970022D596 /* Build configuration list for PBXProject "MoodSync" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42646DAC2CF04E970022D596;
+			packageReferences = (
+				42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 42646DB62CF04E970022D596 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42646DB42CF04E970022D596 /* MoodSync */,
+				42646DC92CF04E980022D596 /* MoodSyncTests */,
+				42646DD32CF04E980022D596 /* MoodSyncUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42646DB32CF04E970022D596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42646DC02CF04E980022D596 /* Preview Assets.xcassets in Resources */,
+				42646E212CF055C50022D596 /* GoogleService-Info.plist in Resources */,
+				42646DBD2CF04E980022D596 /* Assets.xcassets in Resources */,
+				42646E1F2CF055000022D596 /* Naturally.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DC82CF04E980022D596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DD22CF04E980022D596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42646DB12CF04E970022D596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42646DF62CF04F3B0022D596 /* HomeView.swift in Sources */,
+				42646DF92CF04F3B0022D596 /* HabitsView.swift in Sources */,
+				42646DC22CF04E980022D596 /* Persistence.swift in Sources */,
+				42646DFA2CF04F3B0022D596 /* MapView.swift in Sources */,
+				42646DE82CF04EC50022D596 /* GetStartedOne.swift in Sources */,
+				42646DBB2CF04E970022D596 /* ContentView.swift in Sources */,
+				42646DF42CF04F3B0022D596 /* HabitFormView.swift in Sources */,
+				42646E132CF050DA0022D596 /* MoodView.swift in Sources */,
+				42646DFB2CF04F3B0022D596 /* MeditationPlayView.swift in Sources */,
+				42646DFF2CF04FAD0022D596 /* MoodSync.xcdatamodeld in Sources */,
+				42646DF72CF04F3B0022D596 /* MeditationView.swift in Sources */,
+				42646DF82CF04F3B0022D596 /* MoodListView.swift in Sources */,
+				42646DFC2CF04F3B0022D596 /* GroundingPlayView.swift in Sources */,
+				42646E152CF050DA0022D596 /* SignInView.swift in Sources */,
+				42646DF52CF04F3B0022D596 /* GroundingView.swift in Sources */,
+				42646E192CF050DA0022D596 /* ProfileView.swift in Sources */,
+				42646E172CF050DA0022D596 /* SignUpView.swift in Sources */,
+				42646DEA2CF04EED0022D596 /* GetStartedTwo.swift in Sources */,
+				42646E092CF050560022D596 /* GetStartedThree.swift in Sources */,
+				42646E182CF050DA0022D596 /* MoodSyncApp.swift in Sources */,
+				42646E142CF050DA0022D596 /* NotificationView.swift in Sources */,
+				42646E122CF050DA0022D596 /* RelaxingPlayView.swift in Sources */,
+				42646E162CF050DA0022D596 /* RelaxingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DC62CF04E980022D596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42646DCF2CF04E980022D596 /* MoodSyncTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42646DD02CF04E980022D596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42646DDB2CF04E980022D596 /* MoodSyncUITestsLaunchTests.swift in Sources */,
+				42646DD92CF04E980022D596 /* MoodSyncUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42646DCC2CF04E980022D596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42646DB42CF04E970022D596 /* MoodSync */;
+			targetProxy = 42646DCB2CF04E980022D596 /* PBXContainerItemProxy */;
+		};
+		42646DD62CF04E980022D596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42646DB42CF04E970022D596 /* MoodSync */;
+			targetProxy = 42646DD52CF04E980022D596 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42646DDC2CF04E980022D596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42646DDD2CF04E980022D596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42646DDF2CF04E980022D596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoodSync/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42646DE02CF04E980022D596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoodSync/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42646DE22CF04E980022D596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodSync";
+			};
+			name = Debug;
+		};
+		42646DE32CF04E980022D596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodSync";
+			};
+			name = Release;
+		};
+		42646DE52CF04E980022D596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoodSync;
+			};
+			name = Debug;
+		};
+		42646DE62CF04E980022D596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nim.MoodSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoodSync;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42646DB02CF04E970022D596 /* Build configuration list for PBXProject "MoodSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42646DDC2CF04E980022D596 /* Debug */,
+				42646DDD2CF04E980022D596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42646DDE2CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42646DDF2CF04E980022D596 /* Debug */,
+				42646DE02CF04E980022D596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42646DE12CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42646DE22CF04E980022D596 /* Debug */,
+				42646DE32CF04E980022D596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42646DE42CF04E980022D596 /* Build configuration list for PBXNativeTarget "MoodSyncUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42646DE52CF04E980022D596 /* Debug */,
+				42646DE62CF04E980022D596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42646E232CF056F80022D596 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		42646E252CF056F80022D596 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		42646E272CF056F80022D596 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		42646E292CF056F80022D596 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		42646E2B2CF056F80022D596 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		42646E2D2CF056F80022D596 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		42646E2F2CF056F80022D596 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		42646E312CF056F80022D596 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		42646E332CF056F80022D596 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		42646E352CF056F80022D596 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		42646E372CF056F80022D596 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		42646E392CF056F80022D596 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		42646E3B2CF056F80022D596 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		42646E3D2CF056F80022D596 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		42646E3F2CF056F80022D596 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		42646E412CF056F80022D596 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		42646E432CF056F80022D596 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		42646E452CF056F80022D596 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		42646E472CF056F80022D596 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		42646E492CF056F80022D596 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		42646E4B2CF056F80022D596 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		42646E4D2CF056F80022D596 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		42646E4F2CF056F80022D596 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		42646E512CF056F80022D596 /* FirebaseVertexAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42646E222CF056F80022D596 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseVertexAI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		42646DFD2CF04FAD0022D596 /* MoodSync.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42646DFE2CF04FAD0022D596 /* MoodSync.xcdatamodel */,
+			);
+			currentVersion = 42646DFE2CF04FAD0022D596 /* MoodSync.xcdatamodel */;
+			name = MoodSync.xcdatamodeld;
+			path = "../../../Downloads/Mood_Tracker_New-dev/MoodSync/MoodSync.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 42646DAD2CF04E970022D596 /* Project object */;
+}
